@@ -45,6 +45,7 @@ int main()
 	char player = 'X'; 
 	int row, col; 
 	int turn; // Declare turn here 
+	
 
 	cout << "Welcome to Tic-Tac-Toe!\n"; 
 
@@ -86,10 +87,23 @@ int main()
 	drawBoard(board); 
 
 	// Check for a draw 
-	if (turn == 9 && !checkWin(board, 'X') 
+	if (turn == 9 && !checkWin(board, 'X')
 		&& !checkWin(board, 'O')) { 
 		cout << "It's a draw!\n"; 
 	} 
+    char playAgain;
+    cout << "Do you want to play again? (Y/N): ";
+    cin >> playAgain;
+    if (playAgain == 'Y' || playAgain == 'y') {
+        
+        main();
+    }
+    else{    
+	
+    cout << "Thank you for playing!\n";}
+    return 0;
 
-	return 0; 
 }
+
+
+
